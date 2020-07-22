@@ -190,6 +190,7 @@ export const formatters: {
   annotated: Formatter;
   console: Formatter;
   html: HtmlFormatter;
+  devtools: Formatter;
 };
 
 export const console: Formatter
