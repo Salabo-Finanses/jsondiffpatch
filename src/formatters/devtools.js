@@ -194,5 +194,11 @@ export const format = (delta, left) => {
 };
 
 export function log(delta, left) {
-  format(delta, left).forEach(lineArgs => console.log(...lineArgs));
+  if (delta) {
+    console.groupCollapsed('Atoms changed:', Object.keys(delta).join(' '));
+    format(delta, left).forEach(lineArgs => console.log(...lineArgs));
+    console.groupEnd();
+  } else {
+    console.log('Atoms changed: (none)');
+  }
 }
